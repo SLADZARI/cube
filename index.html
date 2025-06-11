@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3D Cube</title>
+<style>
+html,body{height:100%;margin:0;}
+body{display:flex;justify-content:center;align-items:center;background:#000;color:#0ff;perspective:800px;font-family:sans-serif;}
+.scene{width:200px;height:200px;position:relative;transform-style:preserve-3d;}
+.cube{width:100%;height:100%;position:relative;transform-style:preserve-3d;transition:transform 0.5s ease-out;}
+.face{position:absolute;width:200px;height:200px;background:rgba(0,0,0,0.3);border:2px solid #0ff;display:flex;justify-content:center;align-items:center;font-size:80px;color:#0ff;text-shadow:0 0 10px #0ff,0 0 20px #0ff;box-sizing:border-box;}
+.face1{transform:rotateY(0deg) translateZ(100px);}
+.face2{transform:rotateY(90deg) translateZ(100px);}
+.face3{transform:rotateY(180deg) translateZ(100px);}
+.face4{transform:rotateY(-90deg) translateZ(100px);}
+.face5{transform:rotateX(90deg) translateZ(100px);}
+.face6{transform:rotateX(-90deg) translateZ(100px);}
+</style>
+</head>
+<body>
+<div class="scene">
+<div class="cube" id="cube">
+<div class="face face1">?</div>
+<div class="face face2">?</div>
+<div class="face face3">?</div>
+<div class="face face4">?</div>
+<div class="face face5">?</div>
+<div class="face face6">?</div>
+</div>
+</div>
+<script>
+(function(){
+  const cube=document.getElementById('cube');
+  let rx=0,ry=0,last=Date.now();
+  if(window.DeviceMotionEvent){
+    window.addEventListener('devicemotion',e=>{
+      const a=e.accelerationIncludingGravity;
+      if(!a)return;
+      ry+=a.x*2;
+      rx-=a.y*2;
+      cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;
+      last=Date.now();
+    });
+  }
+  function damp(){
+    if(Date.now()-last>400){
+      rx*=0.9;ry*=0.9;
+      cube.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg)`;
+    }
+    requestAnimationFrame(damp);
+  }
+  damp();
+})();
+</script>
+</body>
+</html>

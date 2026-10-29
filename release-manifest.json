@@ -1,0 +1,55 @@
+{
+  "schema": "studio-local-transition/1",
+  "publicationDate": "2026-10-29",
+  "status": "PUBLIC_SOURCE_PREVIEW_NOT_MAC_DEPLOYMENT",
+  "product": "Studio Local (transitional)",
+  "runtime": {
+    "host": "127.0.0.1",
+    "publicPreviewPort": 18793,
+    "ownerInstalledPort": 18789,
+    "modelServicePort": 11435,
+    "ownerMacOnly": true,
+    "nodeMin": "22.13.0",
+    "ollamaVersion": "0.32.5",
+    "imageModel": "x/flux2-klein:4b",
+    "metaLLaMA": false,
+    "paidApi": false
+  },
+  "git": {
+    "publicRepository": "SLADZARI/cube",
+    "publicBranch": "studio-local-ollama-public-preview-2026-10-29",
+    "auditedSourceCommit": "ba5532f820163842153bbe8c81c72ab0a9117fe8",
+    "privateCanonicalRepository": "SLADZARI/studio",
+    "privateReleaseBranch": "release/studio-local-ollama-2026-10-29",
+    "privateCodeFixCommit": "2ba27f895ba0f2b5ba55b146375a8ad98f86efc8"
+  },
+  "features": [
+    "Prompt to AI Image Run",
+    "Hero and Environment Objects",
+    "image reference original uploads up to 4",
+    "compact editor",
+    "JSON templates import/export",
+    "same Job and Inbox output"
+  ],
+  "separation": {
+    "publicPreviewDataDir": "~/Projects/studio-local-ollama-public-preview-data",
+    "ownerDataDir": "~/Projects/studio-pilot-local-free-data",
+    "cloudSiteUnchanged": true,
+    "privateAssetsIncluded": false,
+    "privateGraphIncluded": false,
+    "privateCredentialsIncluded": false
+  },
+  "qa": {
+    "earlierMacCoreAndReferenceE2E": "PASS",
+    "laterJsonInstallerBeforeFix": {
+      "tests": 64,
+      "passed": 63,
+      "failed": 1,
+      "reason": "stale bootstrap string assertion"
+    },
+    "staleAssertionPatched": "YES in private source",
+    "fullMacRerunAfterPatch": "NOT_CONFIRMED",
+    "macJsonVersionInstalled": "NOT_CONFIRMED",
+    "publicMirrorFullMacTest": "NOT_RUN"
+  }
+}

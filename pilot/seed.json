@@ -1,0 +1,148 @@
+{
+  "schema": 4,
+  "id": "proj_public_clean_seed",
+  "title": "Studio Local public clean seed",
+  "camera": {
+    "x": 210,
+    "y": 85,
+    "z": 0.55
+  },
+  "nodes": [
+    {
+      "active": 0,
+      "id": "n_public_prompt",
+      "images": [],
+      "inputs": [],
+      "model3d": null,
+      "objectBindings": [],
+      "objectGroupIds": [],
+      "outputs": [
+        {
+          "dir": "out",
+          "dynamic": false,
+          "id": "p_public_prompt_0",
+          "key": "text",
+          "label": "Text",
+          "required": false,
+          "type": "TEXT"
+        }
+      ],
+      "params": {
+        "background": "auto",
+        "cameraMode": "orbit",
+        "fov": 35,
+        "height": 1024,
+        "outputFormat": "webp",
+        "provider": "manual",
+        "quality": "high",
+        "ratio": "9:16",
+        "runs": 1,
+        "sourceMode": "image",
+        "variant": "gpt",
+        "width": 1024
+      },
+      "text": "A red balloon floating in a blue sky. Soft sunlight, minimal scene, no text.",
+      "title": "Prompt",
+      "type": "prompt",
+      "width": 270,
+      "x": 180,
+      "y": 625
+    },
+    {
+      "active": 0,
+      "id": "n_public_ai_image",
+      "images": [],
+      "inputs": [
+        {
+          "dir": "in",
+          "dynamic": false,
+          "id": "p_public_ai_input_0",
+          "key": "prompt",
+          "label": "Prompt*",
+          "required": true,
+          "type": "TEXT"
+        },
+        {
+          "dir": "in",
+          "dynamic": true,
+          "id": "p_public_ai_input_1",
+          "key": "image1",
+          "label": "Image 1",
+          "required": false,
+          "type": "IMAGE"
+        },
+        {
+          "dir": "in",
+          "dynamic": true,
+          "id": "p_public_ai_input_2",
+          "key": "object1",
+          "label": "Object 1",
+          "required": false,
+          "type": "OBJECT"
+        },
+        {
+          "dir": "in",
+          "dynamic": true,
+          "id": "p_public_ai_input_3",
+          "key": "object2",
+          "label": "Object 2",
+          "required": false,
+          "type": "OBJECT"
+        }
+      ],
+      "model3d": null,
+      "objectBindings": [],
+      "objectGroupIds": [],
+      "outputs": [
+        {
+          "dir": "out",
+          "dynamic": false,
+          "id": "p_public_ai_output_0",
+          "key": "result",
+          "label": "Result",
+          "required": false,
+          "type": "IMAGE"
+        }
+      ],
+      "params": {
+        "background": "auto",
+        "cameraMode": "orbit",
+        "fov": 35,
+        "height": 1024,
+        "outputFormat": "webp",
+        "provider": "manual",
+        "quality": "high",
+        "ratio": "9:16",
+        "runs": 1,
+        "sourceMode": "image",
+        "variant": "gpt",
+        "width": 1024
+      },
+      "text": "",
+      "title": "AI Image",
+      "type": "generator",
+      "width": 270,
+      "x": 180,
+      "y": 80
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_public_prompt_to_ai",
+      "source": "n_public_prompt",
+      "sourcePort": "p_public_prompt_0",
+      "target": "n_public_ai_image",
+      "targetPort": "p_public_ai_input_0"
+    }
+  ],
+  "objects": [],
+  "objectGroups": [],
+  "globalObjectIds": [],
+  "groups": [],
+  "inbox": [],
+  "syncInfo": {
+    "canonicalPath": "local/studio-canvas.json",
+    "format": "visual-canvas-git/1",
+    "mediaPolicy": "local-originals"
+  }
+}

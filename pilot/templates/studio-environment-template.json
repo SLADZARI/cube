@@ -1,0 +1,16 @@
+{
+  "schema": "studio-object/v1",
+  "type": "environment",
+  "name": "",
+  "description": "",
+  "fields": {
+    "architecture": "",
+    "props": "",
+    "materials": "",
+    "palette": "",
+    "lighting": "",
+    "camera": "",
+    "invariants": ""
+  },
+  "custom": {}
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "studio-object/v1",
+  "type": "hero",
+  "name": "",
+  "description": "",
+  "fields": {
+    "identity": "",
+    "silhouette": "",
+    "face": "",
+    "outfit": "",
+    "palette": "",
+    "expressions": "",
+    "scale": "",
+    "invariants": "",
+    "avoid": ""
+  },
+  "custom": {}
+}

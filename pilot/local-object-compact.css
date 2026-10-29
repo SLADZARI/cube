@@ -1,0 +1,92 @@
+/* Studio LOCAL only. Wider working columns, substantially shorter form. */
+#objectModal .object-editor{
+ width:min(860px,94vw);max-height:min(79dvh,670px);padding:10px 13px;
+}
+#objectModal .lightbox-head{margin-bottom:4px}
+#objectModal .object-editor-basic{
+ grid-template-columns:minmax(142px,0.34fr) minmax(0,1fr);gap:8px;margin-bottom:7px
+}
+#objectModal .studio-local-json-bar{
+ display:flex;flex-wrap:wrap;align-items:center;gap:5px;
+ margin:0 0 8px;padding:5px 7px;background:#30343a;border-radius:7px
+}
+#objectModal .studio-local-json-label{font-size:11px;font-weight:700;color:#d7e6ee;margin-right:4px}
+#objectModal .studio-local-json-bar button{
+ font-size:10px;min-height:27px;padding:5px 8px;border:1px solid #505a60;
+ background:#394047;white-space:nowrap;border-radius:6px
+}
+#objectModal .studio-local-json-bar button:hover{background:#46565b}
+#objectModal #studioLocalJSONStatus{
+ font-size:10px;color:#aebbb7;line-height:1.35;min-width:0;flex:1;
+ overflow-wrap:anywhere
+}
+#objectModal #studioLocalJSONStatus[data-error="1"]{color:#ffb49c}
+#objectModal #studioLocalObjectOverview{
+ display:grid;grid-template-columns:minmax(0,1.23fr) minmax(250px,0.95fr);
+ align-items:stretch;gap:9px;margin:5px 0 7px
+}
+#objectModal #studioLocalObjectOverview>.object-label{
+ margin:0;min-width:0;display:flex;flex-direction:column;gap:3px
+}
+#objectModal #objectDescription{
+ height:94px;min-height:70px;max-height:160px;padding:7px 8px;
+ line-height:1.32;resize:vertical
+}
+#objectModal .studio-local-image-panel{
+ min-width:0;background:#2f3238;border:1px solid #454a50;
+ border-radius:8px;padding:6px 8px;display:flex;flex-direction:column
+}
+#objectModal .studio-local-image-panel .object-ref-head{
+ margin:0 0 4px;gap:6px
+}
+#objectModal .studio-local-image-panel .object-ref-head b{font-size:11px}
+#objectModal .studio-local-image-panel .object-ref-grid{
+ gap:5px;min-height:42px;max-height:115px;overflow:auto;align-content:flex-start
+}
+#objectModal .studio-local-image-panel .object-empty{padding:5px 0}
+#objectModal .studio-local-image-panel .object-ref{width:74px}
+#objectModal .studio-local-image-panel .object-ref img{height:58px;width:74px}
+#objectModal .studio-local-image-panel .object-ref-caption{
+ font-size:9px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden
+}
+#objectModal .studio-local-characteristics{padding:6px 9px;margin:4px 0 7px}
+#objectModal .studio-local-characteristics>summary{padding:2px 0 5px}
+#objectModal .object-editor-fields{
+ display:flex;flex-direction:column;gap:7px;margin:4px 0 6px
+}
+#objectModal .object-field-group{
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:6px 8px;padding:6px 8px;border-radius:7px;min-width:0
+}
+#objectModal .object-field-group h4{
+ grid-column:1/-1;margin:0;font-size:10px;letter-spacing:0.01em
+}
+#objectModal .object-field-group label{
+ display:flex;flex-direction:column;min-width:0;gap:3px;
+ font-size:10px;line-height:1.2
+}
+#objectModal .object-field-group label:has(textarea){grid-column:span 2}
+#objectModal .object-field-group label input{height:28px;margin:0;min-width:0}
+#objectModal .object-field-group label textarea{
+ min-height:42px;max-height:110px;margin:0;line-height:1.25
+}
+#objectModal .studio-local-characteristics>.object-label{
+ margin:5px 0 1px;font-size:10px
+}
+#objectModal #objectCustom{min-height:40px;height:46px;resize:vertical}
+#objectModal .object-editor-actions{
+ bottom:-10px;padding:7px 0 2px;margin-top:5px;gap:5px
+}
+@media(max-width:720px){
+ #objectModal .object-editor{width:95vw;max-height:89dvh}
+ #objectModal #studioLocalObjectOverview{grid-template-columns:1fr}
+ #objectModal .studio-local-image-panel .object-ref-grid{max-height:95px}
+ #objectModal .object-field-group{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #objectModal #studioLocalJSONStatus{flex-basis:100%}
+}
+@media(max-width:460px){
+ #objectModal .object-editor-basic{grid-template-columns:1fr}
+ #objectModal .object-field-group{grid-template-columns:1fr}
+ #objectModal .object-field-group label:has(textarea){grid-column:auto}
+ #objectModal .studio-local-json-bar button{font-size:9px;padding:4px 5px}
+}

@@ -21,7 +21,8 @@
     "auditedSourceCommit": "ba5532f820163842153bbe8c81c72ab0a9117fe8",
     "privateCanonicalRepository": "SLADZARI/studio",
     "privateReleaseBranch": "release/studio-local-ollama-2026-10-29",
-    "privateCodeFixCommit": "2ba27f895ba0f2b5ba55b146375a8ad98f86efc8"
+    "privateCodeFixCommit": "2ba27f895ba0f2b5ba55b146375a8ad98f86efc8",
+    "launcherAutoStartFixCommit": "8edf5fafa37163741fdcbb31b7fd5527720c3fc2"
   },
   "features": [
     "Prompt to AI Image Run",
@@ -50,6 +51,12 @@
     "staleAssertionPatched": "YES in private source",
     "fullMacRerunAfterPatch": "NOT_CONFIRMED",
     "macJsonVersionInstalled": "NOT_CONFIRMED",
-    "publicMirrorFullMacTest": "NOT_RUN"
-  }
+    "publicMirrorFullMacTest": "NOT_RUN",
+    "launcherSyntaxLocal": "PASS",
+    "launcherMockedLocalApi": "PASS",
+    "reportedMacLaunchError": "UNVERIFIED_EXACT_ERROR_DESKTOP_COMMANDER_MONTHLY_QUOTA",
+    "fixedLauncherInstalledOnMac": "NOT_CONFIRMED",
+    "studioPreviewMacE2E": "NOT_RUN"
+  },
+  "next": "Download updated ZIP; run bash start.command; on error run bash diagnose.command and share redacted output. No primary Studio overwrite."
 }

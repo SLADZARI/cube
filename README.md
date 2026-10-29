@@ -19,6 +19,26 @@ This **public mirror is a sanitized, standalone source preview**, kept in an iso
 
 This preview uses **port 18793**, data in `~/Projects/studio-local-ollama-public-preview-data`; the existing private local Studio on 18789 and its data folder are not touched. To inspect source-only checks: `node --test tests/public-smoke.test.mjs`. Do not run the server against public Internet or forward the port.
 
+## If launch fails
+
+The updated `start.command` now safely starts the **already installed** isolated Ollama 0.32.5 on port 11435, if it was stopped after a Mac reboot. It also prints explicit error codes and last startup log lines. It does not download a model or touch Studio on 18789.
+
+From the extracted ZIP folder run:
+
+```bash
+bash start.command
+```
+
+If the problem persists, run **read-only** diagnostics in the same folder:
+
+```bash
+bash diagnose.command
+```
+
+Copy the diagnostic output to ChatGPT after removing anything private. This checks only Node, local ports, model/preview logs and installed code SHA. It neither restarts nor deletes anything.
+
+**Important:** the archive you downloaded earlier does not update itself. Download the ZIP again after the launcher fix on 29 October 2026.
+
 ## Release truth
 The earlier private **Mac-local** MVP and Object/image-reference generator have real image E2E evidence. The newest JSON editor was initially **63/64 PASS** on Mac, with a stale test-string assertion. The assertion was corrected on private GitHub commit `2ba27f895ba0f2b5ba55b146375a8ad98f86efc8`; full 64/64 Mac rerun and installation **are not yet confirmed**. This public sanitized build has **not** been browser acceptance-tested on Mac. It is source, not a production publish.
 
